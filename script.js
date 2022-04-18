@@ -71,7 +71,17 @@
 // практика 2 
  " use strict";
 
- const numberOfFilms = +prompt ('Сколько фильмов уже гялнул?');
+ 
+let numberOfFilms;
+
+ function start(){
+     numberOfFilms = +prompt ('Сколько фильмов уже гялнул?');
+    
+    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+         numberOfFilms = +prompt ('Сколько фильмов уже гялнул?');
+    }
+ }
+start();
 
  const personalMovieDB = {
      count: numberOfFilms,
@@ -81,18 +91,11 @@
      private: false
  };
 
-//  const a = prompt('Один из последних фильмов'),
-//        b = prompt('Оценка'),
-//        c = prompt('Один из последних фильмов'),
-//        d = prompt('Оценка');
-
-// personalMovieDB.movies[a] = b;
-// personalMovieDB.movies[a] = b;
-// console.log(personalMovieDB);
-
+function rememberMyFilms(){
 for(let i = 0; i < 2; i++) {
+
     const a = prompt('Один из последних фильмов'),
-    b = prompt('Оценка');
+          b = prompt('Оценка');
 
     if (a != null && b != null && a != '' && b != '' && a.length  < 50){
         personalMovieDB.movies[a] = b;
@@ -100,9 +103,11 @@ for(let i = 0; i < 2; i++) {
         console.log("Попробуй ещё раз");
         i--;
     }
-   
+}
 }
 
+rememberMyFilms();
+function detectedPersonalLevel(){
 if (personalMovieDB.count < 10){
     console.log("мало фильмов");
 } else if  (personalMovieDB.count >= 10 && personalMovieDB.count  < 30){
@@ -112,67 +117,84 @@ if (personalMovieDB.count < 10){
 }else {
     console.log("Печально, это ошибка ");
 }
-console.log(personalMovieDB);
+}
 
-//Функции 
-//Function Declaration где угодно можно обьявить
- function showFirstMessage(text){
-     console.log(text);
- }
+detectedPersonalLevel();
 
- showFirstMessage("hello");
+function showMyDB (hidden){
+    if (!hidden){
+        console.log(personalMovieDB);
+    }
+}
+showMyDB(personalMovieDB.private);
+
+function writeYourGenres(){
+    for(let i = 1; i <= 3; i++){
+        const genre = prompt(`Ваш любимый жанр под номером ${i}`);
+        personalMovieDB.genres[i -1] = genre;
+    }
+}
+writeYourGenres();
+// //Функции 
+// //Function Declaration где угодно можно обьявить
+//  function showFirstMessage(text){
+//      console.log(text);
+//  }
+
+//  showFirstMessage("hello");
 
  
- function calc(a, b){
-     return(a * b + 10);
- }
- console.log(calc(2,2));
+//  function calc(a, b){
+//      return(a * b + 10);
+//  }
+//  console.log(calc(2,2));
 
- function ret(){
-     let num = 50;
-     return(num);
- }
- const anotherNum = ret();
+//  function ret(){
+//      let num = 50;
+//      return(num);
+//  }
+//  const anotherNum = ret();
 
- console.log(anotherNum);
+//  console.log(anotherNum);
 
- // function Exspression 
- //Можно вызвать только когда доходит код 
+//  // function Exspression 
+//  //Можно вызвать только когда доходит код 
 
- const logger = function (){
-   console.log("hello");  
- };
- logger();
+//  const logger = function (){
+//    console.log("hello");  
+//  };
+//  logger();
 
- //Стрелочная функция 
-  const calk = (a, b) => { return a + b};
+//  //Стрелочная функция 
+//   const calk = (a, b) => { return a + b};
 
-  console.log(calk(5,6));
+//   console.log(calk(5,6));
 
-//Методы и свойства строк и чисел
-const str ="str";
-console.log(str[2]);
+// //Методы и свойства строк и чисел
+// const str ="str";
+// console.log(str[2]);
 
-let arr = [1, 2, 3, 4];
-console.log(arr[2] = "a");
-console.log(arr);
+// let arr = [1, 2, 3, 4];
+// console.log(arr[2] = "a");
+// console.log(arr);
 
-const texst = "teSt";
-console.log(texst.toUpperCase());
+// const texst = "teSt";
+// console.log(texst.toUpperCase());
 
-let fruit = "Some fruit";//поиск под строки
+// let fruit = "Some fruit";//поиск под строки
 
-console.log(fruit.indexOf("f"));
+// console.log(fruit.indexOf("f"));
 
-const logg ="Hello World";
-console.log(logg.slice(6));
+// const logg ="Hello World";
+// console.log(logg.slice(6));
 
-//числа
- const num =12.4;
- console.log(Math.round(num));
+// //числа
+//  const num =12.4;
+//  console.log(Math.round(num));
 
- const nam ="12.9px";
- console.log(parseInt(nam));
+//  const nam ="12.9px";
+//  console.log(parseInt(nam));
 
- const nem ="12.9px";d
- console.log(parseFloat(nem));
+//  const nem ="12.9px";d
+//  console.log(parseFloat(nem));
+
