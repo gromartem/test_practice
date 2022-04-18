@@ -174,5 +174,5 @@ console.log(logg.slice(6));
  const nam ="12.9px";
  console.log(parseInt(nam));
 
- const nem ="12.9px";
+ const nem ="12.9px";d
  console.log(parseFloat(nem));
