@@ -148,3 +148,31 @@ console.log(personalMovieDB);
   const calk = (a, b) => { return a + b};
 
   console.log(calk(5,6));
+
+//Методы и свойства строк и чисел
+const str ="str";
+console.log(str[2]);
+
+let arr = [1, 2, 3, 4];
+console.log(arr[2] = "a");
+console.log(arr);
+
+const texst = "teSt";
+console.log(texst.toUpperCase());
+
+let fruit = "Some fruit";//поиск под строки
+
+console.log(fruit.indexOf("f"));
+
+const logg ="Hello World";
+console.log(logg.slice(6));
+
+//числа
+ const num =12.4;
+ console.log(Math.round(num));
+
+ const nam ="12.9px";
+ console.log(parseInt(nam));
+
+ const nem ="12.9px";
+ console.log(parseFloat(nem));
